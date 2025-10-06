@@ -1,0 +1,14 @@
+<div
+  [ngClass]="{
+  'row-style': labelAlignment() === 'row',
+  'column-style': labelAlignment() === 'column',
+}"
+>
+  <span class="label">{{ label() }}</span>
+  <input
+    [value]="value"
+    (input)="onInput($event)"
+    (blur)="onBlur()"
+    [placeholder]="placeholder()"
+  />
+</div>

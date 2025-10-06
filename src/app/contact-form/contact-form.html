@@ -1,0 +1,55 @@
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="contact-form">
+  <div class="column-fields">
+    <app-labeled-input-field
+      [label]="'Your full name'"
+      formControlName="name"
+      [placeholder]="'Type your name'"
+    />
+    <app-labeled-input-field
+      [label]="'Your email'"
+      formControlName="email"
+      [placeholder]="'Type your email'"
+    />
+  </div>
+  <mat-divider class="divider"></mat-divider>
+  <div class="row-fields">
+    <app-labeled-input-field
+      [label]="'City'"
+      formControlName="city"
+      [labelAlignment]="'column'"
+      [placeholder]="'ex. Thessaloniki'"
+    />
+    <app-labeled-input-field
+      [label]="'Postal code'"
+      formControlName="postalCode"
+      [labelAlignment]="'column'"
+      [placeholder]="'ex. 54632'"
+    />
+  </div>
+  <app-labeled-input-field
+    [label]="'Address'"
+    formControlName="address"
+    [labelAlignment]="'column'"
+    [placeholder]="'ex. Kanavakou 24'"
+  />
+  <div class="message-container">
+    <div class="message-label-container">
+      <span class="message-label">Message</span>
+      <span class="message-optional">Optional</span>
+    </div>
+
+    <textarea
+      matInput
+      formControlName="message"
+      placeholder="Enter your message here"
+      rows="4"
+      class="message-textarea"
+    ></textarea>
+  </div>
+  <mat-checkbox>
+    <span class="terms-label">I agree with the Terms & Conditions</span>
+  </mat-checkbox>
+  <button mat-button class="submit-button">
+    <span class="submit-button-text">Send!</span>
+  </button>
+</form>
